@@ -1,0 +1,10 @@
+@mixin makeLegacyContainer($width,$height) {
+    position: absolute;
+    width:#{$width};
+    height: #{$height};
+    // This will not be displayed if you 
+    // dont a content character.
+    &::before::after {
+        content: ' '
+    }
+}

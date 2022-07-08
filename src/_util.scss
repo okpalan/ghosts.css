@@ -1,0 +1,6 @@
+@mixin  makeCentered($top,$left) {
+    position:absolute;
+    top:#{$top};
+    left: #{$left};
+    transform: translate(-#{$left},-#{$left});
+}

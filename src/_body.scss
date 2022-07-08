@@ -1,0 +1,24 @@
+$mouths : --happy, --sad , --angry;
+
+%mouth {
+   background-color: $mouth-color;
+}
+.mouth {
+   @include makeLegacyContainer(50px,50px);
+   @extend %mouth;
+   
+   @each $mouth in $mouths {
+     @if $mouth == --happy {
+      &#{--happy}{
+         @extend .happy,%border-bottom;
+      }
+     }
+     @else if $mouth == --sad {
+         @extend %border-top;
+     }
+     @else if $mouth == --angry {
+
+     }
+   }
+  
+}  

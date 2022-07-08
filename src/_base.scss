@@ -1,0 +1,22 @@
+// Set box-sizing globally to handle padding and border widths
+*,
+*:after,
+*:before{
+    box-sizing: inherit
+}
+// The base font-size is set at 62.5% for having the convenience
+// of sizing rems in a way that is similar to using px: 1.6rem = 16px
+html {box-sizing: border-box}
+
+
+// classes that define patterns
+%border-bottom {
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+%border-top {
+   border-top-left-radius: 100%;
+   border-top-right-radius: 100%;
+}
+
