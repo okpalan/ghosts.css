@@ -1,5 +1,6 @@
 @mixin makeLegacyContainer($width,$height) {
-    position: absolute;
+    display: inline-block;
+    //position: absolute;
     width:#{$width};
     height: #{$height};
     // This will not be displayed if you 
