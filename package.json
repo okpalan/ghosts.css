@@ -18,6 +18,7 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "sass": "^1.53.0"
   }
 }

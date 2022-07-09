@@ -1,55 +1,70 @@
 $mouths : --happy, --sad , --angry,--scary,--baby;
 
-%mouth {
+%mouth-properties {
    background-color: $mouth-color;
 }
 
-@mixin makeTheet($count:1) {
-   %tooth {
-      $i :0;
-      @while $i <= $count{
-         &::before {
-            overflow: hidden;
+@mixin makeTooth($count:1) {
+   $i : 0;
+    @while $i <= $count {
+      .tooth-#{$i} {   
+         $i : $i+1; 
+         position:relative;
+         &::before { 
             position: absolute;
-            left: calc(15px); // width + spacing
+            left:calc(.5em * 2); // width + spacing
             display: block;
             width: .5em;
             height: 1.2em;
             content: " ";
             background-color: white;
-        }
-        $i : $i+1;
-      } 
+            z-index:2;         
+
+         }
+
+
+         }
+       } 
+
+
+
    }
-   @extend %tooth;
-}
+   
+   
+   
+
 
 
 .mouth {
    @include makeLegacyContainer(80px,45px);
-   @extend %mouth;
+   @extend %mouth-properties;
    @each $mouth in $mouths {
       @if $mouth == --sad {
          &.sad,&.#{$mouth} {
-      @extend   %border-top;         
+         @extend  %border-top;         
       }
       }
-      @else if $mouth == --happy{
+      @else if $mouth == --happy {
        &.happy,&.#{$mouth}{
          @extend %border-bottom;
        }
       }
       @else if $mouth == --angry {
-         &.angry,&.#{$mouth} {
-            @include makeTheet(50);
-         }
-               
+         &.angry,&#{$mouth} {
+            @extend %border-top;         
+            @include makeTooth(10);
+
+          }
+
       }
       @else if $mouth == --baby  {
-         &.baby,&#{$mouth}{
-            @include makeTheet($count:1);
+         &.baby,&.#{$mouth}{
+            @extend %border-bottom;
+            @include makeTooth();
          }
+
       }
    }
   
-}  
+} 
+ 
