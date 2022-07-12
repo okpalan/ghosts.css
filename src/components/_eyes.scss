@@ -1,0 +1,45 @@
+// variant in size,open|closed 
+$eye-types: ---open , --closed;
+$eye-sizes: (--small : .8 , --medium : 1.25 ,--large : 2 );
+
+.eyes {       
+    position: relative;
+    box-sizing: border-box;
+    top: 50%;
+    left: calc(50% - (var(--g-eye-size,  18px)));
+    span {
+        display: inline-block;
+        width: var(--g-eye-size, 18px);
+        height: var(--g-eye-size, 18px);
+        @each $k, $size in $eye-sizes {
+            @if($k == --small){
+            &.eye-#{$k} {
+                transform:  scale(.5);
+            }
+        }
+        @else if($k ==  --medium){
+            &.eye-#{$k}{
+                transform: scale(1.5);
+            }
+        }
+        @else if ($k == --large)  {
+            &.eye-#{$k} {
+                transform: scale(2.5);
+            }
+        }
+    
+        z-index: 2;
+        background-color: red;
+        &::before {
+            content: " ";
+        }
+
+        &:first-child {
+            margin-right: .5px;
+        }
+        &:last-child {
+            margin-left: .5px;
+        }
+    }
+    }
+}

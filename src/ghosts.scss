@@ -1,6 +1,8 @@
-@import "_base";
-@import "util";
-@import "_util.legacy";
-@import "_color";
-@import "_body";
-@import "_emoticons";
+@charset "UTF-8";
+
+@import 'custom_settings';
+@import '_base';
+ 
+// components
+@import './components/eyes.scss';
+

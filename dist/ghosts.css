@@ -1,202 +1,81 @@
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
+* {
+  --gwh: 2.5;
+  --g-eye-size: 18px;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-.mouth.baby, .mouth.--baby, .mouth.happy, .mouth.--happy {
-  border-bottom-left-radius: 100%;
-  border-bottom-right-radius: 100%;
-}
-
-.mouth.angry, .mouth--angry, .mouth.sad, .mouth.--sad {
+.ghost {
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  height: 150px;
+  background: purple;
+}
+.ghost.ghost--small {
+  transform: scale(0.8);
+}
+.ghost.ghost--medium {
+  transform: scale(1.25);
+}
+.ghost.ghost--large {
+  transform: scale(2.5);
+}
+.ghost::before {
+  content: " ";
 }
 
-.mouth {
-  background-color: orange;
+.eyes {
+  position: relative;
+  box-sizing: border-box;
+  top: 50%;
+  left: calc(50% - (var(--g-eye-size, 18px)));
 }
-
-.mouth {
+.eyes span {
   display: inline-block;
-  overflow: hidden;
-  width: 80px;
-  height: 45px;
-}
-.mouth::before::after {
-  content: " ";
-}
-.mouth.angry .tooth-0, .mouth--angry .tooth-0 {
-  position: relative;
-}
-.mouth.angry .tooth-0::before, .mouth--angry .tooth-0::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
+  width: var(--g-eye-size, 18px);
+  height: var(--g-eye-size, 18px);
   z-index: 2;
-}
-.mouth.angry .tooth-1, .mouth--angry .tooth-1 {
-  position: relative;
-}
-.mouth.angry .tooth-1::before, .mouth--angry .tooth-1::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
+  background-color: red;
   z-index: 2;
-}
-.mouth.angry .tooth-2, .mouth--angry .tooth-2 {
-  position: relative;
-}
-.mouth.angry .tooth-2::before, .mouth--angry .tooth-2::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
+  background-color: red;
   z-index: 2;
+  background-color: red;
 }
-.mouth.angry .tooth-3, .mouth--angry .tooth-3 {
-  position: relative;
+.eyes span.eye---small {
+  transform: scale(0.5);
 }
-.mouth.angry .tooth-3::before, .mouth--angry .tooth-3::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
+.eyes span::before {
   content: " ";
-  background-color: white;
-  z-index: 2;
 }
-.mouth.angry .tooth-4, .mouth--angry .tooth-4 {
-  position: relative;
+.eyes span:first-child {
+  margin-right: 0.5px;
 }
-.mouth.angry .tooth-4::before, .mouth--angry .tooth-4::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
+.eyes span:last-child {
+  margin-left: 0.5px;
+}
+.eyes span.eye---medium {
+  transform: scale(1.5);
+}
+.eyes span::before {
   content: " ";
-  background-color: white;
-  z-index: 2;
 }
-.mouth.angry .tooth-5, .mouth--angry .tooth-5 {
-  position: relative;
+.eyes span:first-child {
+  margin-right: 0.5px;
 }
-.mouth.angry .tooth-5::before, .mouth--angry .tooth-5::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
+.eyes span:last-child {
+  margin-left: 0.5px;
+}
+.eyes span.eye---large {
+  transform: scale(2.5);
+}
+.eyes span::before {
   content: " ";
-  background-color: white;
-  z-index: 2;
 }
-.mouth.angry .tooth-6, .mouth--angry .tooth-6 {
-  position: relative;
+.eyes span:first-child {
+  margin-right: 0.5px;
 }
-.mouth.angry .tooth-6::before, .mouth--angry .tooth-6::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.angry .tooth-7, .mouth--angry .tooth-7 {
-  position: relative;
-}
-.mouth.angry .tooth-7::before, .mouth--angry .tooth-7::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.angry .tooth-8, .mouth--angry .tooth-8 {
-  position: relative;
-}
-.mouth.angry .tooth-8::before, .mouth--angry .tooth-8::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.angry .tooth-9, .mouth--angry .tooth-9 {
-  position: relative;
-}
-.mouth.angry .tooth-9::before, .mouth--angry .tooth-9::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.angry .tooth-10, .mouth--angry .tooth-10 {
-  position: relative;
-}
-.mouth.angry .tooth-10::before, .mouth--angry .tooth-10::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.baby .tooth-0, .mouth.--baby .tooth-0 {
-  position: relative;
-}
-.mouth.baby .tooth-0::before, .mouth.--baby .tooth-0::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
-}
-.mouth.baby .tooth-1, .mouth.--baby .tooth-1 {
-  position: relative;
-}
-.mouth.baby .tooth-1::before, .mouth.--baby .tooth-1::before {
-  position: absolute;
-  left: 1em;
-  display: block;
-  width: 0.5em;
-  height: 1.2em;
-  content: " ";
-  background-color: white;
-  z-index: 2;
+.eyes span:last-child {
+  margin-left: 0.5px;
 }
