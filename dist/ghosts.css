@@ -14,16 +14,24 @@
   background: whitesmoke;
 }
 
-.eye--left, .eye--right {
+.eyes {
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+}
+.eyes.eye--left {
+  float: left;
+}
+.eyes.eye--left {
   position: absolute;
   display: block;
   transform: scale(var(--eye-width-height, 1));
-  width: 24px;
-  height: 24px;
+  width: inherit;
+  height: inherit;
   overflow: hidden;
   box-sizing: border-box;
 }
-.eye--left::after, .eye--left::before, .eye--right::after, .eye--right::before {
+.eyes.eye--left::after, .eyes.eye--left::before {
   content: " ";
   transform: translate(50%, 50%);
   display: block inline;
@@ -31,7 +39,34 @@
   position: absolute;
   box-sizing: border-box;
 }
-.eye--left::before, .eye--right::before {
+.eyes.eye--left::before {
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #3f3fff, inset 0 0 0 2px darkblue;
+}
+.eyes.eye--right {
+  float: right;
+}
+.eyes.eye--right {
+  position: absolute;
+  display: block;
+  transform: scale(var(--eye-width-height, 1));
+  width: inherit;
+  height: inherit;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.eyes.eye--right::after, .eyes.eye--right::before {
+  content: " ";
+  transform: translate(50%, 50%);
+  display: block inline;
+  border-radius: 100%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.eyes.eye--right::before {
   width: 8px;
   height: 8px;
   border: 2px solid white;
