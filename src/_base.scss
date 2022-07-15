@@ -1,35 +1,15 @@
-$ghost-sizes : --small,--medium ,--large;
-
+// ghost-width-and-height
+$ghost-width: 180px;
+$ghost-height:100px;
+$eye-width: 20px;
+$eye-height : 20px;
 .ghost {
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    width:150px;
-    height: 150px;
-    background: purple;
-
-    @each $k in $ghost-sizes {
-        @if($k == --small){
-            &.ghost#{$k} {
-               transform:  scale(.8);
-            }
-        }
-        @else if($k ==  --medium){
-            &.ghost#{$k}{
-                transform: scale(1.25);
-            }
-        }
-        @else if ($k == --large)  {
-            &.ghost#{$k} {
-                transform: scale(2.5);
-            }
-        }
-    }
-
-    &::before {
-        content : " ";
-    }
-    
+    position: relative;
+    width: $eye-width;
+    height: $eye-height;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: whitesmoke;
 }

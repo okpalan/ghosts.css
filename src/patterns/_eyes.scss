@@ -1,0 +1,32 @@
+@mixin make-eye ($background:darkblue,){
+    & { 
+    position: absolute;
+    display: block;
+    transform: scale(var( --eye-width-height, 1));
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    box-sizing: border-box
+   }
+   
+   &::after,
+   &::before {
+    content:  " ";
+    transform:  translate(50%,50%);
+    display: block inline;
+    border-radius: 100%;
+    position: absolute;
+    box-sizing: border-box;
+   }
+
+   &::before {
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    z-index:2;
+    box-shadow: 
+    0 0 0 4px lighten($color: $background, $amount: 35%),
+    inset 0 0 0 2px $background;
+   } 
+
+}

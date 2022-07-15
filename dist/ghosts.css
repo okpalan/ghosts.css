@@ -1,81 +1,40 @@
 * {
   --gwh: 2.5;
-  --g-eye-size: 18px;
+  --g-eye-wh: 20px;
 }
 
 .ghost {
-  border-top-left-radius: 100%;
-  border-top-right-radius: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: 150px;
-  height: 150px;
-  background: purple;
-}
-.ghost.ghost--small {
-  transform: scale(0.8);
-}
-.ghost.ghost--medium {
-  transform: scale(1.25);
-}
-.ghost.ghost--large {
-  transform: scale(2.5);
-}
-.ghost::before {
-  content: " ";
+  position: relative;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: whitesmoke;
 }
 
-.eyes {
-  position: relative;
+.eye--left, .eye--right {
+  position: absolute;
+  display: block;
+  transform: scale(var(--eye-width-height, 1));
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
   box-sizing: border-box;
-  top: 50%;
-  left: calc(50% - (var(--g-eye-size, 18px)));
 }
-.eyes span {
-  display: inline-block;
-  width: var(--g-eye-size, 18px);
-  height: var(--g-eye-size, 18px);
-  z-index: 2;
-  background-color: red;
-  z-index: 2;
-  background-color: red;
-  z-index: 2;
-  background-color: red;
-}
-.eyes span.eye---small {
-  transform: scale(0.5);
-}
-.eyes span::before {
+.eye--left::after, .eye--left::before, .eye--right::after, .eye--right::before {
   content: " ";
+  transform: translate(50%, 50%);
+  display: block inline;
+  border-radius: 100%;
+  position: absolute;
+  box-sizing: border-box;
 }
-.eyes span:first-child {
-  margin-right: 0.5px;
-}
-.eyes span:last-child {
-  margin-left: 0.5px;
-}
-.eyes span.eye---medium {
-  transform: scale(1.5);
-}
-.eyes span::before {
-  content: " ";
-}
-.eyes span:first-child {
-  margin-right: 0.5px;
-}
-.eyes span:last-child {
-  margin-left: 0.5px;
-}
-.eyes span.eye---large {
-  transform: scale(2.5);
-}
-.eyes span::before {
-  content: " ";
-}
-.eyes span:first-child {
-  margin-right: 0.5px;
-}
-.eyes span:last-child {
-  margin-left: 0.5px;
+.eye--left::before, .eye--right::before {
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #3f3fff, inset 0 0 0 2px darkblue;
 }

@@ -1,5 +1,5 @@
-$eye-size: 18px;
+$eye-width-height: 20px;
 * {
     --gwh: 2.5;
-    --g-eye-size: #{$eye-size};
+    --g-eye-wh: #{$eye-width-height};
 }

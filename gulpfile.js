@@ -11,7 +11,7 @@ gulp.task("sass", function () {
 })
 
 gulp.task("uglify",function (){
-    
+    return void(0)
 })
 
 gulp.task("serve", function (){
