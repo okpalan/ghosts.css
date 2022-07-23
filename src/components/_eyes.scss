@@ -11,4 +11,7 @@ $eye-list: --left, --right;
          
         }
     }
+    span {
+        @include make-eye(blue);
+    }
 }

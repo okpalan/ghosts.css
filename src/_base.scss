@@ -1,12 +1,11 @@
 // ghost-width-and-height
 $ghost-width: 150px;
-$ghost-height:150px;
+$ghost-height: 125px;
+
 
 .ghost {
-    display: flex;
-    flex-direction: row;
     position: relative;
     width: $ghost-width;
     height: $ghost-height;
-    background: whitesmoke;
+    background-color: antiquewhite;
 }

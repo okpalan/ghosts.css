@@ -4,12 +4,10 @@
 }
 
 .ghost {
-  display: flex;
-  flex-direction: row;
   position: relative;
   width: 150px;
-  height: 150px;
-  background: whitesmoke;
+  height: 125px;
+  background-color: antiquewhite;
 }
 
 .eyes {
@@ -81,6 +79,39 @@
   box-sizing: border-box;
 }
 .eyes.eye--right::before {
+  content: " ";
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #b3b3ff, inset 0 0 0 2px blue;
+}
+.eyes span {
+  position: absolute;
+  display: block;
+  transform: scale(1);
+  width: var(--g-eye-wh, 1);
+  height: var(--g-eye-wh, 1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.eyes span:first-child {
+  right: 50%;
+  margin-left: calc(var(--g-eye-space, 15px, 10px));
+}
+.eyes span:last-child {
+  left: 50%;
+  margin-right: var(--g-eye-space, 15px, 10px);
+}
+.eyes span::after, .eyes span::before {
+  content: " ";
+  display: inline-block;
+  transform: translate(50%, 50%);
+  border-radius: 100%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.eyes span::before {
   content: " ";
   width: 8px;
   height: 8px;

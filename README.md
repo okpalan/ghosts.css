@@ -1,3 +1,3 @@
 
 # Ghosts.css
-1) Each module in thier folder is named after thier property;
+Haunt your page with spooky ghosts.
