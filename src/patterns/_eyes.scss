@@ -1,4 +1,4 @@
-@mixin make-eye ($background: darkblue, $horizontal-margin: 10px) {
+@mixin make-eye ($background: darkblue, $horizontal-margin: 15px) {
     & {
         position: absolute;
         display: block;
@@ -10,12 +10,12 @@
     }
 
     &:first-child {
-        left: 0;
-        margin-left: var(--g-eye-space, $horizontal-margin, 10px);
+        right: 50%;
+        margin-left: calc(var(--g-eye-space, $horizontal-margin, 10px));
     }
 
     &:last-child {
-        right: 0;
+        left: 50%;
         margin-right: var(--g-eye-space, $horizontal-margin, 10px);
     }
 
