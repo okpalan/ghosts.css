@@ -5,17 +5,10 @@ $eye-list: --left, --right;
     transform: scale(calc(var(--g-eye-wh)),1);
     margin:auto 0;
     @each $pos in $eye-list {
-       
-        @if $pos == --left {
-            @include make-eye(blue);
-            margin-left:0px;
-        }
-        @if $pos == --right {
-            @include make-eye(blue);
-            margin-right:-0;
-        }
         &.eye#{$pos} {
-
+            position: absolute;
+            @include make-eye(blue);
+         
         }
     }
 }

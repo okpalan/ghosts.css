@@ -1,33 +1,45 @@
-@mixin make-eye ($background:darkblue,$aspect:1.2){
-    & { 
-    position: absolute;
-    display: block;
-    transform: scale($aspect);
-    width: var( --g-eye-wh, 1);
-    height: var( --g-eye-wh, 1);
-    overflow: hidden;
-    box-sizing: border-box
-   }
-   
-   &::after,
-   &::before {
-    content:  " ";
-    transform:  translate(50%,50%);
-    display: block inline;
-    border-radius: 100%;
-    position: absolute;
-    box-sizing: border-box;
-   }
+@mixin make-eye ($background: darkblue, $horizontal-margin: 10px) {
+    & {
+        position: absolute;
+        display: block;
+        transform: scale(1); // make this a css varaible
+        width: var(--g-eye-wh, 1);
+        height: var(--g-eye-wh, 1);
+        overflow: hidden;
+        box-sizing: border-box;
+    }
 
-   &::before {
-    content:  " ";
-    width: 8px;
-    height: 8px;
-    border: 2px solid white;
-    z-index:2;
-    box-shadow: 
-    0 0 0 4px lighten($color: $background, $amount: 35%),
-    inset 0 0 0 2px $background;
-   } 
+    &:first-child {
+        left: 0;
+        margin-left: var(--g-eye-space, $horizontal-margin, 10px);
+    }
+
+    &:last-child {
+        right: 0;
+        margin-right: var(--g-eye-space, $horizontal-margin, 10px);
+    }
+
+    &::after,
+    &::before {
+        content: " ";
+        display: inline-block;
+
+        transform: translate(50%, 50%);
+        border-radius: 100%;
+        position: absolute;
+        box-sizing: border-box;
+
+    }
+
+    &::before {
+        content: " ";
+        width: 8px;
+        height: 8px;
+        border: 2px solid white;
+        z-index: 2;
+        box-shadow:
+            0 0 0 4px lighten($color: $background, $amount: 35%),
+            inset 0 0 0 2px $background;
+    }
 
 }
