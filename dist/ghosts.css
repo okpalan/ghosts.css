@@ -4,34 +4,30 @@
 }
 
 .ghost {
+  display: flex;
+  flex-direction: row;
   position: relative;
-  width: 20px;
-  height: 20px;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  min-width: 100vw;
+  width: 150px;
+  height: 150px;
   background: whitesmoke;
 }
 
 .eyes {
-  display: flex;
-  justify-content: center;
+  transform: scale(calc(var(--g-eye-wh)), 1);
   margin: auto 0;
+  margin-left: 0px;
+  margin-right: 0;
 }
-.eyes.eye--left {
-  float: left;
-}
-.eyes.eye--left {
+.eyes {
   position: absolute;
   display: block;
-  transform: scale(var(--eye-width-height, 1));
-  width: inherit;
-  height: inherit;
+  transform: scale(1.2);
+  width: var(--g-eye-wh, 1);
+  height: var(--g-eye-wh, 1);
   overflow: hidden;
   box-sizing: border-box;
 }
-.eyes.eye--left::after, .eyes.eye--left::before {
+.eyes::after, .eyes::before {
   content: " ";
   transform: translate(50%, 50%);
   display: block inline;
@@ -39,26 +35,24 @@
   position: absolute;
   box-sizing: border-box;
 }
-.eyes.eye--left::before {
+.eyes::before {
+  content: " ";
   width: 8px;
   height: 8px;
   border: 2px solid white;
   z-index: 2;
-  box-shadow: 0 0 0 4px #3f3fff, inset 0 0 0 2px darkblue;
+  box-shadow: 0 0 0 4px #b3b3ff, inset 0 0 0 2px blue;
 }
-.eyes.eye--right {
-  float: right;
-}
-.eyes.eye--right {
+.eyes {
   position: absolute;
   display: block;
-  transform: scale(var(--eye-width-height, 1));
-  width: inherit;
-  height: inherit;
+  transform: scale(1.2);
+  width: var(--g-eye-wh, 1);
+  height: var(--g-eye-wh, 1);
   overflow: hidden;
   box-sizing: border-box;
 }
-.eyes.eye--right::after, .eyes.eye--right::before {
+.eyes::after, .eyes::before {
   content: " ";
   transform: translate(50%, 50%);
   display: block inline;
@@ -66,10 +60,11 @@
   position: absolute;
   box-sizing: border-box;
 }
-.eyes.eye--right::before {
+.eyes::before {
+  content: " ";
   width: 8px;
   height: 8px;
   border: 2px solid white;
   z-index: 2;
-  box-shadow: 0 0 0 4px #3f3fff, inset 0 0 0 2px darkblue;
+  box-shadow: 0 0 0 4px #b3b3ff, inset 0 0 0 2px blue;
 }

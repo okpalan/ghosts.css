@@ -1,22 +1,21 @@
 @use '../patterns/eyes' as *;
-$eye-list: left,right;
+$eye-list: --left, --right;
 
 .eyes {
-    display: flex;
-    justify-content: center;
-    margin:  auto 0;
-    
-@each $pos in $eye-list {
-    &.eye--#{$pos} {
-        @include make-eye();
-        @if($pos == left) {
-            float:left;
+    transform: scale(calc(var(--g-eye-wh)),1);
+    margin:auto 0;
+    @each $pos in $eye-list {
+       
+        @if $pos == --left {
+            @include make-eye(blue);
+            margin-left:0px;
+        }
+        @if $pos == --right {
+            @include make-eye(blue);
+            margin-right:-0;
+        }
+        &.eye#{$pos} {
 
         }
-        @else if($pos == right) {
-            float: right;
-        }
     }
-}   
-    
 }

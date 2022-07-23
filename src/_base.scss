@@ -1,15 +1,12 @@
 // ghost-width-and-height
-$ghost-width: 180px;
-$ghost-height:100px;
-$eye-width: 20px;
-$eye-height : 20px;
+$ghost-width: 150px;
+$ghost-height:150px;
+
 .ghost {
+    display: flex;
+    flex-direction: row;
     position: relative;
-    width: $eye-width;
-    height: $eye-height;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    min-width: 100vw;
+    width: $ghost-width;
+    height: $ghost-height;
     background: whitesmoke;
 }

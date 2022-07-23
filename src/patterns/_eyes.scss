@@ -1,10 +1,10 @@
-@mixin make-eye ($background:darkblue){
+@mixin make-eye ($background:darkblue,$aspect:1.2){
     & { 
     position: absolute;
     display: block;
-    transform: scale(var( --eye-width-height, 1));
-    width: inherit;
-    height: inherit;
+    transform: scale($aspect);
+    width: var( --g-eye-wh, 1);
+    height: var( --g-eye-wh, 1);
     overflow: hidden;
     box-sizing: border-box
    }
@@ -20,6 +20,7 @@
    }
 
    &::before {
+    content:  " ";
     width: 8px;
     height: 8px;
     border: 2px solid white;
